@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'layout/head' %}
+</head>
+
+<body class="antialiased font-sans leading-relaxed">
+
+  <section id="navBar">
+      <div id="img-block">
+          <img src="{{ 'images/logo-salon.svg' | asset_url }}"></div>
+      </div>
+      <div></div>
+  </section>
+
+
+  {{ content_for_layout }}
+     
+
+  <section id="footer">
+
+  </section>
+  {% include 'layout/scripts' %}
+</body>
+</html>

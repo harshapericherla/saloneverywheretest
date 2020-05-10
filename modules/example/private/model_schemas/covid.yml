@@ -1,0 +1,32 @@
+name: covid
+properties: 
+  - name : contact_id
+    type : string
+  - name : cough
+    type: boolean
+  - name : breath
+    type: boolean
+  - name : throat
+    type: boolean
+  - name : nose
+    type: boolean
+  - name : voice
+    type: boolean
+  - name : swallowing
+    type: boolean
+  - name : smell
+    type: boolean
+  - name : vomiting
+    type: boolean
+  - name : malaise
+    type: boolean
+  - name : chills
+    type: boolean
+  - name : headache
+    type: boolean   
+  - name : outside
+    type: boolean
+  - name : fever
+    type: boolean
+  - name : respiratory
+    type: boolean

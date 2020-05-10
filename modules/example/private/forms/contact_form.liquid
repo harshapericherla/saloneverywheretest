@@ -1,0 +1,25 @@
+---
+name: contact_form
+resource: modules/example/contact
+resource_owner: anyone
+redirect_to: >
+  {%- if form.id -%}
+    ?id={{form.id}}&contactinfo={{form.properties.contactinfo}}
+  {% endif %}
+
+fields:
+   properties:
+      contactinfo:
+         validation: 
+            presence: true
+---
+
+{% form %}
+  <input name="{{ form.fields.properties.contactinfo.name}}" value="{{ form.fields.properties.contactinfo.value }}" id="name" type="text" placeholder="Email or Phone (EX: 548-333-2133)">
+  {% if form.errors['properties.contactinfo'] %}
+    <p class="error">{{ form.errors['properties.contactinfo'] }}</p>
+  {% endif %}
+  <button class="btn">
+     Submit
+  </button>
+{% endform %}

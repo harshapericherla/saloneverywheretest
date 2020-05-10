@@ -1,0 +1,61 @@
+---
+slug: /
+---
+
+{% assign bg-url = 'images/bg-img.jpg' | asset_url %}
+{% parse_json sData %}
+  {
+    "background-image": "url('{{bg-url}}')"
+  }
+{% endparse_json %}
+
+
+<section id="body">
+  <div id="body-row-one">
+    <div id="body-header">
+        Safe, Private, Professional One-on-one Salon Services
+    </div>
+    <div id="body-header-two">
+        Welcome to SalonEverywhere Pre-Appointment COVID Screening Tool
+    </div>
+    <div id="body-content">
+
+            {% assign contactinfo = context.params.contactinfo %}
+
+            {% assign server_address = context.headers.SERVER_NAME %}
+
+            {% assign enteredType = contactinfo | split:"@" %}
+
+            {% if enteredType.size == 1 %}
+                {% parse_json data %}
+                {
+                  "mobile": "{{ contactinfo}}",
+                  "content": "Please click on the link {{server_address}}/covidform?id={{context.params.id}} to enter the COVID Questionnare"
+                }
+                {% endparse_json %}
+                {% graphql notify = 'modules/example/notifyMobile', data: data %}
+            {% endif %}
+
+            {% if enteredType.size == 2 %}
+                {% parse_json data %}
+                {
+                  "email": "{{ contactinfo}}",
+                  "content": "Please click on the link {{server_address}}/covidform?id={{context.params.id}} to enter the COVID Questionnare"
+                }
+                {% endparse_json %}
+                {% graphql notify = 'modules/example/notifyEmail', data: data %}
+
+            {% endif %}
+
+
+            {% include_form 'modules/example/contact_form' %}
+          </div>
+      </div>
+      <div id="body-row-two">
+      </div>
+
+    <script>
+      var styleData = {{sData}};
+      document.getElementById("body").style.backgroundImage = styleData["background-image"];
+    </script>
+  </section>

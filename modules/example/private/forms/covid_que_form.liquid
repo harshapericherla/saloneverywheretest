@@ -1,0 +1,116 @@
+---
+name: covid_que_form
+resource: modules/example/covid
+resource_owner: anyone
+redirect_to: thank_you
+fields:
+   properties:
+      contact_id:
+      cough:
+      breath:
+      throat:
+      nose:
+      voice:
+      swallowing:
+      smell: 
+      vomiting:
+      malaise:
+      chills:  
+      headache:
+      outside:
+      fever:  
+      respiratory:
+---
+<section id="body-covid">
+
+   <div id="body-covid-header">COVID Screening Questionnaire</div>
+   {% form %}
+   <div class="form-group que">
+     <label for = "question1">1. Do you have any of the symptoms or signs?</label>
+   </div>
+   <div class="form-group sub-que">
+      <label for = "cough">- New or worsening cough</label>
+      <input name="{{ form.fields.properties.cough.name}}" value="true" checked type="radio"><span class="radioText">True</span></input>
+      <input name="{{ form.fields.properties.cough.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "breath">- Shortness of breath</label>
+    <input name="{{ form.fields.properties.breath.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.breath.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "throat">- Sore throat</label>
+    <input name="{{ form.fields.properties.throat.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.throat.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "nose">- Runny nose, sneezing or nasal congestion (in absence of underlying reasons for symptoms such as seasonal allergies and post nasal drip)</label>
+    <input name="{{ form.fields.properties.nose.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.nose.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "voice">- Hoarse voice</label>
+    <input name="{{ form.fields.properties.voice.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.voice.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "swallowing">- Difficulty swallowing</label>
+    <input name="{{ form.fields.properties.swallowing.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.swallowing.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "smell">- New smell or taste disorder(s)</label>
+    <input name="{{ form.fields.properties.smell.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.smell.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "vomiting">- Nausea/vomiting, diarrhea, abdominal pain</label>
+    <input name="{{ form.fields.properties.vomiting.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.vomiting.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "malaise">- Unexplained fatigue/malaise</label>
+    <input name="{{ form.fields.properties.malaise.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.malaise.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "chills">- Chills</label>
+    <input name="{{ form.fields.properties.chills.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.chills.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group sub-que">
+    <label for = "headache">- Headache</label>
+    <input name="{{ form.fields.properties.headache.name}}" value="true" checked type="radio">True</input>
+    <input name="{{ form.fields.properties.headache.name}}" value="false" type="radio">False</input>
+   </div>
+   <div class="form-group que">
+    <label for = "outside">2. Have you travelled outside of Canada or had close contact with anyone that has travelled outside of Canada in the past 14 days?</label>
+    <span>
+      <input name="{{ form.fields.properties.outside.name}}" value="true" checked type="radio">True</input>
+      <input name="{{ form.fields.properties.outside.name}}" value="false" type="radio">False</input>
+    </span>
+   </div>
+   <div class="form-group que">
+    <label for = "fever">3. Do you have a fever?</label>
+    <span>
+      <input name="{{ form.fields.properties.fever.name}}" value="true" checked type="radio">True</input>
+      <input name="{{ form.fields.properties.fever.name}}" value="false" type="radio">False</input>
+    </span>
+   </div>
+   <div class="form-group que">
+    <label for = "respiratory">4. Have you had close contact with anyone with respiratory illness or a confirmed or probable case of COVID-19?</label>
+    <span>
+       <input name="{{ form.fields.properties.respiratory.name}}" value="true" checked type="radio">True</input>
+       <input name="{{ form.fields.properties.respiratory.name}}" value="false" type="radio">False</input>
+    </span>
+   </div>
+   <input type="hidden" name="{{ form.fields.properties.contact_id.name}}" value="{{context.params.id}}" /> 
+   <div id="submitBtn">
+      <button class="btn">
+         Submit
+      </button>
+   </div>
+   
+ {% endform %}
+</section>
+

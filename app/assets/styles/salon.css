@@ -1,0 +1,186 @@
+html,body
+{
+    font-family: Poppins,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+#navBar
+{
+    width:100%;
+    height: 77.19px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+#img-block
+{
+    padding-left:15px;
+    width: 30%;
+    max-height: 77.19px;
+}
+#img-block > img
+{
+    padding-left:15px;
+    height: 51px;
+    min-width:200px;
+}
+#body
+{
+    height: 491.167px;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+}
+#body-row-one{
+    width: 45%;
+    color: white;
+    margin-left: 15px;
+}
+#body-header
+{
+    padding: 30px 15px 15px 30px;
+    font-size: 40px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    line-height: 1.17948718em;
+    font-family: Poppins,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+#body-header-two
+{
+  font-size: 18px;
+  padding-left: 30px;
+}
+
+#body-content
+{
+    padding: 30px 15px 15px 30px;
+}
+
+#body-content > form
+{
+    display: flex;
+    width:80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#body-content > form > input
+{
+    width: 100%;
+    border:0px;
+    padding: 10px 0px 10px 10px;
+    border-radius: 3px;
+    font-size: 16px;
+    outline: none;
+}
+#body-content > form > input:hover
+{
+    outline: none;
+}
+#body-content > form > button
+{
+    margin-top: 15px;    
+}
+
+.btn
+{
+    border: 0px;
+    padding: 15px 35px 15px 35px;
+    border-radius: 3px;
+    background-color: hsl(358, 100%, 40%);
+    color: #fff;
+    font-size: 1rem;
+    transition: background-color .25s ease-out,color .25s ease-out;
+}
+.btn:hover
+{
+    background-color: hsl(358, 70%, 40%);
+    cursor: pointer;
+}
+.error
+{
+    width: 100%;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    margin:0px;
+    margin-top: 5px;
+}
+#body-covid
+{
+    padding: 20px 0px 0px 0px;
+    width:100%;
+    background-color: #f2f2f2;
+}
+#body-covid-header
+{
+    text-align: center;
+    color:hsl(358, 70%, 40%);
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+.form-group
+{
+    margin-left: 45px;
+    width:90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+.form-group > label
+{
+    width: 100%;
+}
+.sub-que
+{
+    margin-left:70px;
+}
+.que > label
+{
+   font-size: 20px;
+   color: hsl(358, 70%, 40%);
+}
+.que > span
+{
+    margin: 10px 0px 10px 20px;
+}
+
+.sub-que > label
+{
+   font-size: 18px;
+   margin-bottom: 5px;
+}
+.sub-que > input
+{
+    margin-left: 18px;
+}
+
+.radioText
+{
+    color:#404040;
+}
+
+#submitBtn
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+#thank-you
+{
+    width: 100%;
+    display: flex;
+    font-size: 30px;
+    color: hsl(358, 100%, 40%);
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
